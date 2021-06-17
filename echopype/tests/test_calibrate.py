@@ -158,7 +158,7 @@ def test_compute_Sv_ek80_pc_echoview():
 
 
 def test_compute_Sv_ek80_CW_complex():
-    """Test calibrate CW mode data encoded as complex sam[les.
+    """Test calibrate CW mode data encoded as complex samples.
     """
     ek80_raw_path = str(ek80_path.joinpath('ar2.0-D20201210-T000409.raw'))  # CW complex
     echodata = ep.open_raw(ek80_raw_path, sonar_model='EK80')
@@ -166,8 +166,8 @@ def test_compute_Sv_ek80_CW_complex():
 
 
 def test_compute_Sv_ek80_BB_complex():
-    """Test calibrate BB mode data encoded as complex sam[les.
+    """Test calibrate BB mode data encoded as complex samples.
     """
-    ek80_raw_path = str(ek80_path.joinpath('ar2.0-D20201209-T235955.raw'))  # CW complex
+    ek80_raw_path = str(ek80_path.joinpath('ar2.0-D20201209-T235955.raw'))  # BB complex
     echodata = ep.open_raw(ek80_raw_path, sonar_model='EK80')
     assert ep.calibrate.compute_Sv(echodata, waveform_mode='BB', encode_mode='complex')
